@@ -1,19 +1,36 @@
+import { ArrowUpRight } from 'lucide-react'
+import { useState } from 'react'
 import { projects } from '../../data/content'
+import type { Project } from '../../types/content'
 import { SectionWrapper } from '../layout/SectionWrapper'
 import { AnimatedCounter } from '../motion/AnimatedCounter'
 import { Magnetic } from '../motion/Magnetic'
 import { RevealOnScroll } from '../motion/RevealOnScroll'
 import { Badge } from '../ui/Badge'
 import { Card } from '../ui/Card'
+import { ProjectModal } from './ProjectModal'
 
 export function Projects() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+
   return (
     <SectionWrapper id="projects" eyebrow="Projects & Research" title="Selected work">
       <div className="grid gap-6">
         {projects.map((project, index) => (
           <RevealOnScroll key={project.title} delay={index * 0.08}>
             <Magnetic>
-              <Card>
+              <Card
+                role="button"
+                tabIndex={0}
+                onClick={() => setSelectedProject(project)}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault()
+                    setSelectedProject(project)
+                  }
+                }}
+                className="cursor-pointer"
+              >
                 <div className="flex flex-wrap items-start justify-between gap-4">
                   <div>
                     <p className="text-sm font-medium uppercase tracking-wide text-accent">
@@ -49,11 +66,17 @@ export function Projects() {
                     ))}
                   </div>
                 )}
+
+                <p className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent">
+                  View details <ArrowUpRight size={14} />
+                </p>
               </Card>
             </Magnetic>
           </RevealOnScroll>
         ))}
       </div>
+
+      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </SectionWrapper>
   )
 }

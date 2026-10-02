@@ -14,11 +14,11 @@ export function Resume() {
               <FileText size={22} />
             </span>
             <div>
-              <p className="font-medium text-ink">Adityan_Thirumeni_Resume.pdf</p>
+              <p className="font-medium text-ink">Adityan_Thirumeni_CV.pdf</p>
               <p className="text-sm text-ink-soft">Education, projects, skills and experience in full detail.</p>
             </div>
           </div>
-          <Button href="/resume.pdf" download>
+          <Button href="/resume.pdf" download="Adityan_Thirumeni_CV.pdf">
             Download resume <Download size={16} />
           </Button>
         </Card>

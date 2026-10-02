@@ -27,6 +27,11 @@ export interface SkillCategory {
 
 export type ProjectType = 'Thesis' | 'Personal Project' | 'Research'
 
+export interface ProjectDetailSection {
+  heading: string
+  body: string[]
+}
+
 export interface Project {
   title: string
   type: ProjectType
@@ -39,6 +44,9 @@ export interface Project {
     label: string
   }
   link?: string
+  liveUrl?: string
+  detailSummary: string
+  detailSections: ProjectDetailSection[]
 }
 
 export interface ExperienceEntry {

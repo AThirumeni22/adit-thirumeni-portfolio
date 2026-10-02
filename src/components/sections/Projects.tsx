@@ -15,7 +15,7 @@ export function Projects() {
 
   return (
     <SectionWrapper id="projects" eyebrow="Projects & Research" title="Selected work">
-      <div className="grid gap-6">
+      <div className="grid gap-4">
         {projects.map((project, index) => (
           <RevealOnScroll key={project.title} delay={index * 0.08}>
             <Magnetic>
@@ -50,7 +50,7 @@ export function Projects() {
                   )}
                 </div>
 
-                <ul className="mt-5 space-y-2.5">
+                <ul className="mt-4 space-y-2">
                   {project.bullets.map((bullet) => (
                     <li key={bullet} className="flex gap-2 text-sm leading-relaxed text-ink-soft sm:text-base">
                       <span className="mt-2 h-1 w-1 flex-shrink-0 rounded-full bg-ink-soft" />
@@ -60,14 +60,14 @@ export function Projects() {
                 </ul>
 
                 {project.stack && (
-                  <div className="mt-5 flex flex-wrap gap-2">
+                  <div className="mt-4 flex flex-wrap gap-2">
                     {project.stack.map((tech) => (
                       <Badge key={tech}>{tech}</Badge>
                     ))}
                   </div>
                 )}
 
-                <p className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-accent">
+                <p className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent">
                   View details <ArrowUpRight size={14} />
                 </p>
               </Card>

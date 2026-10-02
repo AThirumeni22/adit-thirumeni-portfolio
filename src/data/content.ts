@@ -69,52 +69,9 @@ export const skills: SkillCategory[] = [
 
 export const projects: Project[] = [
   {
-    title: 'Importance of CEO Capital in Firm Performance',
-    type: 'Thesis',
-    year: '2026',
-    description: 'MSc Thesis — a panel study of what CEO human capital actually predicts.',
-    bullets: [
-      'Built a panel of 7,487 firm-year observations for S&P 500 firms (2000–2022) by merging Compustat, ExecuComp and BoardEx data from WRDS',
-      'Constructed a composite CEO Capital Index from education, network size and international experience',
-      'Ran panel regressions in R with year fixed effects and firm-clustered errors; found the index predicts firm value (Tobin’s Q) but not profitability (ROA), with network size driving almost the entire effect',
-    ],
-    stack: ['R', 'WRDS', 'Compustat', 'ExecuComp', 'BoardEx'],
-    stat: { value: 7487, label: 'firm-year observations' },
-    detailSummary:
-      "A panel study testing whether a composite index of CEO education, professional network size, and international experience predicts S&P 500 firm performance — and whether that answer depends on how performance is measured.",
-    detailSections: [
-      {
-        heading: 'Research Question',
-        body: [
-          "Prior research links individual CEO traits — education, network size, international exposure — to firm performance, but usually one at a time. This thesis combines all three into a single CEO Capital Index and asks whether the combination still predicts performance, whether that answer differs between accounting profitability (ROA) and market valuation (Tobin's Q), and which of the three underlying factors actually drives the result.",
-        ],
-      },
-      {
-        heading: 'Data & Method',
-        body: [
-          'Built a panel of 7,487 firm-year observations for S&P 500 firms (2000–2022) via WRDS, merging Compustat (financials), ExecuComp (CEO identity) and BoardEx (CEO background data).',
-          'Estimated panel regressions with year fixed effects and firm-clustered standard errors, winsorizing at the 1st/99th percentiles. Firm fixed effects were deliberately excluded from the main specification — most CEOs sit at the same firm for years, so within-firm variation in the index is very limited (25.4% of firms show zero variation at all) — but included as a robustness check, alongside Fama-MacBeth regressions run year by year.',
-        ],
-      },
-      {
-        heading: 'Key Findings',
-        body: [
-          "The CEO Capital Index has no statistically significant relationship with ROA, but a strong, positive, highly significant relationship with Tobin's Q (coefficient 0.354, p < 0.001) — a two-sample z-test confirms this difference between the two performance measures is itself statistically significant (p < 0.001).",
-          'Decomposing the index shows the entire effect is carried by network size — education and international experience are not significant for either measure. The Fama-MacBeth robustness check reproduces almost the identical coefficient (0.318), and the result survives, though weakens, under firm fixed effects.',
-        ],
-      },
-      {
-        heading: 'Limitations',
-        body: [
-          "BoardEx measures a CEO's lifetime accumulated connections rather than current, active ones, so the network effect may partly reflect age and tenure rather than networking skill on its own. A cleaner measure of active or high-quality connections would help separate the two explanations.",
-        ],
-      },
-    ],
-  },
-  {
     title: 'Obto',
     type: 'Personal Project',
-    year: '2026',
+    year: 'September 2026',
     description: 'A social workout-tracking web app, built and shipped end to end.',
     bullets: [
       'Built and launched a full-stack web app (JavaScript, PostgreSQL/Supabase, Vercel) used by 5–6 active users to log workouts and plan gym sessions together',
@@ -143,6 +100,48 @@ export const projects: Project[] = [
       {
         heading: 'Try it',
         body: ['The app is live and in active use — open it below to see the current version.'],
+      },
+    ],
+  },
+  {
+    title: 'Importance of CEO Capital in Firm Performance',
+    type: 'Thesis',
+    year: '2026',
+    description: 'MSc Thesis — a panel study of what CEO human capital actually predicts.',
+    bullets: [
+      'Built a panel of 7,487 firm-year observations for S&P 500 firms (2000–2022) by merging Compustat, ExecuComp and BoardEx data from WRDS',
+      'Constructed a composite CEO Capital Index from education, network size and international experience',
+      'Ran panel regressions in R with year fixed effects and firm-clustered errors; found the index predicts firm value (Tobin’s Q) but not profitability (ROA), with network size driving almost the entire effect',
+    ],
+    stack: ['R', 'WRDS', 'Compustat', 'ExecuComp', 'BoardEx'],
+    detailSummary:
+      "A panel study testing whether a composite index of CEO education, professional network size, and international experience predicts S&P 500 firm performance — and whether that answer depends on how performance is measured.",
+    detailSections: [
+      {
+        heading: 'Research Question',
+        body: [
+          "Prior research links individual CEO traits — education, network size, international exposure — to firm performance, but usually one at a time. This thesis combines all three into a single CEO Capital Index and asks whether the combination still predicts performance, whether that answer differs between accounting profitability (ROA) and market valuation (Tobin's Q), and which of the three underlying factors actually drives the result.",
+        ],
+      },
+      {
+        heading: 'Data & Method',
+        body: [
+          'Built a panel of 7,487 firm-year observations for S&P 500 firms (2000–2022) via WRDS, merging Compustat (financials), ExecuComp (CEO identity) and BoardEx (CEO background data).',
+          'Estimated panel regressions with year fixed effects and firm-clustered standard errors, winsorizing at the 1st/99th percentiles. Firm fixed effects were deliberately excluded from the main specification — most CEOs sit at the same firm for years, so within-firm variation in the index is very limited (25.4% of firms show zero variation at all) — but included as a robustness check, alongside Fama-MacBeth regressions run year by year.',
+        ],
+      },
+      {
+        heading: 'Key Findings',
+        body: [
+          "The CEO Capital Index has no statistically significant relationship with ROA, but a strong, positive, highly significant relationship with Tobin's Q (coefficient 0.354, p < 0.001) — a two-sample z-test confirms this difference between the two performance measures is itself statistically significant (p < 0.001).",
+          'Decomposing the index shows the entire effect is carried by network size — education and international experience are not significant for either measure. The Fama-MacBeth robustness check reproduces almost the identical coefficient (0.318), and the result survives, though weakens, under firm fixed effects.',
+        ],
+      },
+      {
+        heading: 'Limitations',
+        body: [
+          "BoardEx measures a CEO's lifetime accumulated connections rather than current, active ones, so the network effect may partly reflect age and tenure rather than networking skill on its own. A cleaner measure of active or high-quality connections would help separate the two explanations.",
+        ],
       },
     ],
   },

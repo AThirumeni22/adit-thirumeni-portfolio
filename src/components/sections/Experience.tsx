@@ -5,7 +5,7 @@ import { TimelineItem } from '../ui/TimelineItem'
 export function Experience() {
   return (
     <SectionWrapper id="experience" eyebrow="Work Experience" title="Where I've worked">
-      <ul className="space-y-14">
+      <ul className="space-y-8">
         {experience.map((entry, index) => (
           <TimelineItem
             key={entry.company}
